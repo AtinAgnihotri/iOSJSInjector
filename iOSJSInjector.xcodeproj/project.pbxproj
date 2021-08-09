@@ -18,7 +18,8 @@
 		85D0BC0D26C0D2670079026B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85D0BC0B26C0D2670079026B /* MainInterface.storyboard */; };
 		85D0BC1126C0D2670079026B /* iOSJSInjectorExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 85D0BC0526C0D2670079026B /* iOSJSInjectorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		85D0BC1626C0D5C50079026B /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 85D0BC1526C0D5C50079026B /* Action.js */; };
-		85D0BC1826C139020079026B /* JSScriptObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BC1726C139020079026B /* JSScriptObject.swift */; };
+		85D0BC1A26C13AA60079026B /* JSScriptObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BC1926C13AA60079026B /* JSScriptObject.swift */; };
+		85D0BC1C26C13AF30079026B /* SampleScripts.json in Resources */ = {isa = PBXBuildFile; fileRef = 85D0BC1B26C13AF30079026B /* SampleScripts.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +61,8 @@
 		85D0BC0C26C0D2670079026B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		85D0BC0E26C0D2670079026B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85D0BC1526C0D5C50079026B /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
-		85D0BC1726C139020079026B /* JSScriptObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSScriptObject.swift; sourceTree = "<group>"; };
+		85D0BC1926C13AA60079026B /* JSScriptObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSScriptObject.swift; sourceTree = "<group>"; };
+		85D0BC1B26C13AF30079026B /* SampleScripts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleScripts.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +119,6 @@
 				855BE6B926BD05A600A3436F /* Assets.xcassets */,
 				855BE6BB26BD05A600A3436F /* LaunchScreen.storyboard */,
 				855BE6BE26BD05A600A3436F /* Info.plist */,
-				85D0BC1726C139020079026B /* JSScriptObject.swift */,
 			);
 			path = iOSJSInjector;
 			sourceTree = "<group>";
@@ -130,6 +131,8 @@
 				85D0BC0B26C0D2670079026B /* MainInterface.storyboard */,
 				85D0BC0E26C0D2670079026B /* Info.plist */,
 				85D0BC1526C0D5C50079026B /* Action.js */,
+				85D0BC1926C13AA60079026B /* JSScriptObject.swift */,
+				85D0BC1B26C13AF30079026B /* SampleScripts.json */,
 			);
 			path = iOSJSInjectorExtension;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85D0BC1C26C13AF30079026B /* SampleScripts.json in Resources */,
 				85D0BC1626C0D5C50079026B /* Action.js in Resources */,
 				85D0BC0826C0D2670079026B /* Media.xcassets in Resources */,
 				85D0BC0D26C0D2670079026B /* MainInterface.storyboard in Resources */,
@@ -237,7 +241,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85D0BC1826C139020079026B /* JSScriptObject.swift in Sources */,
 				855BE6B526BD05A200A3436F /* ViewController.swift in Sources */,
 				855BE6B126BD05A200A3436F /* AppDelegate.swift in Sources */,
 				855BE6B326BD05A200A3436F /* SceneDelegate.swift in Sources */,
@@ -248,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85D0BC1A26C13AA60079026B /* JSScriptObject.swift in Sources */,
 				85D0BC0A26C0D2670079026B /* ActionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

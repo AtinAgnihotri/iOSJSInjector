@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Site Title",
+        "url": "",
+        "script": "alert(document.title);"
+    },
+    {
+        "title": "Site URL",
+        "url": "",
+        "script": "alert(document.URL);"
+    }
+]

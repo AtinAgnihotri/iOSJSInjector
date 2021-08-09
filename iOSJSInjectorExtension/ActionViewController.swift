@@ -15,12 +15,15 @@ class ActionViewController: UIViewController {
     
     var pageTitle = ""
     var pageURL = ""
+    var sampleScripts = [JSScriptObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addDoneButton()
         addKeyboardObserver()
+        addScriptsButton()
         getActionInput()
+        loadSampleScripts()
     }
     
     func getActionInput() {
@@ -44,8 +47,8 @@ class ActionViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
     }
     
-    func addSavedScriptsButton() {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Saved Scripts", style: .plain, target: self, action: #selector(showSavedScripts))
+    func addScriptsButton() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Scripts", style: .plain, target: self, action: #selector(showSavedScripts))
     }
     
     func addKeyboardObserver() {
@@ -88,7 +91,7 @@ class ActionViewController: UIViewController {
         }
         ac.addAction(savedScripts)
         
-        for script in loadSampleScripts() {
+        for script in getSampleScripts() {
             ac.addAction(script)
         }
         
@@ -99,13 +102,44 @@ class ActionViewController: UIViewController {
     }
     
     func loadSavedScripts() {
-        
+        let ac = UIAlertController(title: "Save coming soon", message: "Ability to save and load scripts coming soon", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
     
-    func loadSampleScripts() -> [UIAlertAction] {
-        [
-            
-        ]
+    func getSampleScripts() -> [UIAlertAction] {
+        var sampleScriptActions = [UIAlertAction]()
+        
+        
+        if !sampleScripts.isEmpty {
+            for script in sampleScripts {
+                let scriptAction = UIAlertAction(title: script.title, style: .default) { [weak self] _ in
+                    self?.setScript(to: script.script)
+                }
+                sampleScriptActions.append(scriptAction)
+            }
+        }
+
+        return sampleScriptActions
+    }
+    
+    func loadSampleScripts() {
+        print("Reach 1")
+        if let url = Bundle.main.url(forResource: "SampleScripts", withExtension: "json") {
+            print("Reach 2")
+            if let data = try? Data(contentsOf: url) {
+                print("Reach 3")
+                let decoder = JSONDecoder()
+                if let decodedData = try? decoder.decode([JSScriptObject].self, from: data) {
+                    print("Reach 4")
+                    sampleScripts += decodedData
+                }
+            }
+        }
+    }
+    
+    func setScript(to value: String) {
+        script.text = value
     }
 
 }
