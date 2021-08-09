@@ -44,6 +44,10 @@ class ActionViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
     }
     
+    func addSavedScriptsButton() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Saved Scripts", style: .plain, target: self, action: #selector(showSavedScripts))
+    }
+    
     func addKeyboardObserver() {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -74,6 +78,34 @@ class ActionViewController: UIViewController {
         let customJS = NSItemProvider(item: webDict, typeIdentifier: kUTTypePropertyList as String)
         item.attachments = [customJS]
         extensionContext?.completeRequest(returningItems: [item])
+    }
+    
+    @objc func showSavedScripts() {
+        let ac = UIAlertController(title: "Saved Scripts", message: "Samples scripts and scripts you save for a site", preferredStyle: .actionSheet)
+        
+        let savedScripts = UIAlertAction(title: "Saved Scripts", style: .default) { [weak self] _ in
+            self?.loadSavedScripts()
+        }
+        ac.addAction(savedScripts)
+        
+        for script in loadSampleScripts() {
+            ac.addAction(script)
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        ac.addAction(cancel)
+        
+        present(ac, animated: true)
+    }
+    
+    func loadSavedScripts() {
+        
+    }
+    
+    func loadSampleScripts() -> [UIAlertAction] {
+        [
+            
+        ]
     }
 
 }
