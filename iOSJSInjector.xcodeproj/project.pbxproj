@@ -13,7 +13,36 @@
 		855BE6B826BD05A200A3436F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 855BE6B626BD05A200A3436F /* Main.storyboard */; };
 		855BE6BA26BD05A600A3436F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 855BE6B926BD05A600A3436F /* Assets.xcassets */; };
 		855BE6BD26BD05A600A3436F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 855BE6BB26BD05A600A3436F /* LaunchScreen.storyboard */; };
+		85D0BC0826C0D2670079026B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85D0BC0726C0D2670079026B /* Media.xcassets */; };
+		85D0BC0A26C0D2670079026B /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BC0926C0D2670079026B /* ActionViewController.swift */; };
+		85D0BC0D26C0D2670079026B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85D0BC0B26C0D2670079026B /* MainInterface.storyboard */; };
+		85D0BC1126C0D2670079026B /* iOSJSInjectorExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 85D0BC0526C0D2670079026B /* iOSJSInjectorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		85D0BC1626C0D5C50079026B /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 85D0BC1526C0D5C50079026B /* Action.js */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		85D0BC0F26C0D2670079026B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 855BE6A526BD05A200A3436F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85D0BC0426C0D2670079026B;
+			remoteInfo = iOSJSInjectorExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		853E5F2E26C0D12500CF37A9 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				85D0BC1126C0D2670079026B /* iOSJSInjectorExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		855BE6AD26BD05A200A3436F /* iOSJSInjector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSJSInjector.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +53,12 @@
 		855BE6B926BD05A600A3436F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		855BE6BC26BD05A600A3436F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		855BE6BE26BD05A600A3436F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85D0BC0526C0D2670079026B /* iOSJSInjectorExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iOSJSInjectorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		85D0BC0726C0D2670079026B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		85D0BC0926C0D2670079026B /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		85D0BC0C26C0D2670079026B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		85D0BC0E26C0D2670079026B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85D0BC1526C0D5C50079026B /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,13 +69,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85D0BC0226C0D2670079026B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		853E5F2126C0D12500CF37A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		855BE6A426BD05A200A3436F = {
 			isa = PBXGroup;
 			children = (
 				855BE6AF26BD05A200A3436F /* iOSJSInjector */,
+				85D0BC0626C0D2670079026B /* iOSJSInjectorExtension */,
+				853E5F2126C0D12500CF37A9 /* Frameworks */,
 				855BE6AE26BD05A200A3436F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				855BE6AD26BD05A200A3436F /* iOSJSInjector.app */,
+				85D0BC0526C0D2670079026B /* iOSJSInjectorExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,6 +119,18 @@
 			path = iOSJSInjector;
 			sourceTree = "<group>";
 		};
+		85D0BC0626C0D2670079026B /* iOSJSInjectorExtension */ = {
+			isa = PBXGroup;
+			children = (
+				85D0BC0726C0D2670079026B /* Media.xcassets */,
+				85D0BC0926C0D2670079026B /* ActionViewController.swift */,
+				85D0BC0B26C0D2670079026B /* MainInterface.storyboard */,
+				85D0BC0E26C0D2670079026B /* Info.plist */,
+				85D0BC1526C0D5C50079026B /* Action.js */,
+			);
+			path = iOSJSInjectorExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,15 +141,34 @@
 				855BE6A926BD05A200A3436F /* Sources */,
 				855BE6AA26BD05A200A3436F /* Frameworks */,
 				855BE6AB26BD05A200A3436F /* Resources */,
+				853E5F2E26C0D12500CF37A9 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				85D0BC1026C0D2670079026B /* PBXTargetDependency */,
 			);
 			name = iOSJSInjector;
 			productName = iOSJSInjector;
 			productReference = 855BE6AD26BD05A200A3436F /* iOSJSInjector.app */;
 			productType = "com.apple.product-type.application";
+		};
+		85D0BC0426C0D2670079026B /* iOSJSInjectorExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85D0BC1226C0D2670079026B /* Build configuration list for PBXNativeTarget "iOSJSInjectorExtension" */;
+			buildPhases = (
+				85D0BC0126C0D2670079026B /* Sources */,
+				85D0BC0226C0D2670079026B /* Frameworks */,
+				85D0BC0326C0D2670079026B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSJSInjectorExtension;
+			productName = iOSJSInjectorExtension;
+			productReference = 85D0BC0526C0D2670079026B /* iOSJSInjectorExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -97,6 +180,9 @@
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					855BE6AC26BD05A200A3436F = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					85D0BC0426C0D2670079026B = {
 						CreatedOnToolsVersion = 12.5;
 					};
 				};
@@ -115,6 +201,7 @@
 			projectRoot = "";
 			targets = (
 				855BE6AC26BD05A200A3436F /* iOSJSInjector */,
+				85D0BC0426C0D2670079026B /* iOSJSInjectorExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -127,6 +214,16 @@
 				855BE6BD26BD05A600A3436F /* LaunchScreen.storyboard in Resources */,
 				855BE6BA26BD05A600A3436F /* Assets.xcassets in Resources */,
 				855BE6B826BD05A200A3436F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85D0BC0326C0D2670079026B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85D0BC1626C0D5C50079026B /* Action.js in Resources */,
+				85D0BC0826C0D2670079026B /* Media.xcassets in Resources */,
+				85D0BC0D26C0D2670079026B /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +240,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85D0BC0126C0D2670079026B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85D0BC0A26C0D2670079026B /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85D0BC1026C0D2670079026B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85D0BC0426C0D2670079026B /* iOSJSInjectorExtension */;
+			targetProxy = 85D0BC0F26C0D2670079026B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		855BE6B626BD05A200A3436F /* Main.storyboard */ = {
@@ -160,6 +273,14 @@
 				855BE6BC26BD05A600A3436F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		85D0BC0B26C0D2670079026B /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85D0BC0C26C0D2670079026B /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -284,6 +405,7 @@
 		855BE6C226BD05A600A3436F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +425,7 @@
 		855BE6C326BD05A600A3436F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,6 +437,44 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.atinagnihotri.iOSJSInjector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		85D0BC1326C0D2670079026B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9DDB4H4HQ;
+				INFOPLIST_FILE = iOSJSInjectorExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.atinagnihotri.iOSJSInjector.iOSJSInjectorExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		85D0BC1426C0D2670079026B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9DDB4H4HQ;
+				INFOPLIST_FILE = iOSJSInjectorExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.atinagnihotri.iOSJSInjector.iOSJSInjectorExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -336,6 +497,15 @@
 			buildConfigurations = (
 				855BE6C226BD05A600A3436F /* Debug */,
 				855BE6C326BD05A600A3436F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85D0BC1226C0D2670079026B /* Build configuration list for PBXNativeTarget "iOSJSInjectorExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85D0BC1326C0D2670079026B /* Debug */,
+				85D0BC1426C0D2670079026B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
