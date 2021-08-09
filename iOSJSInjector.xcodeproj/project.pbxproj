@@ -20,6 +20,7 @@
 		85D0BC1626C0D5C50079026B /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 85D0BC1526C0D5C50079026B /* Action.js */; };
 		85D0BC1A26C13AA60079026B /* JSScriptObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BC1926C13AA60079026B /* JSScriptObject.swift */; };
 		85D0BC1C26C13AF30079026B /* SampleScripts.json in Resources */ = {isa = PBXBuildFile; fileRef = 85D0BC1B26C13AF30079026B /* SampleScripts.json */; };
+		85D0BC1E26C149610079026B /* SavedScriptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D0BC1D26C149610079026B /* SavedScriptsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		85D0BC1526C0D5C50079026B /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
 		85D0BC1926C13AA60079026B /* JSScriptObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSScriptObject.swift; sourceTree = "<group>"; };
 		85D0BC1B26C13AF30079026B /* SampleScripts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleScripts.json; sourceTree = "<group>"; };
+		85D0BC1D26C149610079026B /* SavedScriptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedScriptsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				85D0BC1526C0D5C50079026B /* Action.js */,
 				85D0BC1926C13AA60079026B /* JSScriptObject.swift */,
 				85D0BC1B26C13AF30079026B /* SampleScripts.json */,
+				85D0BC1D26C149610079026B /* SavedScriptsViewController.swift */,
 			);
 			path = iOSJSInjectorExtension;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85D0BC1A26C13AA60079026B /* JSScriptObject.swift in Sources */,
+				85D0BC1E26C149610079026B /* SavedScriptsViewController.swift in Sources */,
 				85D0BC0A26C0D2670079026B /* ActionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

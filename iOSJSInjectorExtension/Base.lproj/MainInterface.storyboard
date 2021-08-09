@@ -43,12 +43,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="979.71014492753636" y="47.544642857142854"/>
+            <point key="canvasLocation" x="1889.8550724637682" y="47.544642857142854"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Run-->
         <scene sceneID="S5m-jj-CvQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b0X-1u-Nk5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Run" selectedImage="play.fill" catalog="system" id="OSp-pj-NxB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="J27-aI-NsH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -61,10 +62,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ci7-Ck-7FT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.565217391304358" y="47.544642857142854"/>
+            <point key="canvasLocation" x="979.71014492753636" y="47.544642857142854"/>
         </scene>
     </scenes>
     <resources>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -19,9 +19,10 @@ class ActionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addDoneButton()
+        addSaveButton()
         addKeyboardObserver()
         addScriptsButton()
+        addRunButton()
         getActionInput()
         loadSampleScripts()
     }
@@ -43,12 +44,19 @@ class ActionViewController: UIViewController {
         }
     }
     
-    func addDoneButton() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+    func addSaveButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(save))
     }
     
     func addScriptsButton() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Scripts", style: .plain, target: self, action: #selector(showSavedScripts))
+    }
+    
+    func addRunButton() {
+        let run = UIBarButtonItem(title: "Run", style: .done, target: self, action: #selector(run))
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        toolbarItems = [spacer, run, spacer]
+        navigationController?.isToolbarHidden = false
     }
     
     func addKeyboardObserver() {
@@ -74,7 +82,7 @@ class ActionViewController: UIViewController {
         script.scrollRangeToVisible(selectedRange)
     }
 
-    @IBAction func done() {
+    @IBAction func run() {
         let item = NSExtensionItem()
         let arg: NSDictionary = ["customJavaScript": script.text]
         let webDict: NSDictionary = [NSExtensionJavaScriptFinalizeArgumentKey: arg]
@@ -102,9 +110,16 @@ class ActionViewController: UIViewController {
     }
     
     func loadSavedScripts() {
+        /*
         let ac = UIAlertController(title: "Save coming soon", message: "Ability to save and load scripts coming soon", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
+        */
+        print(pageURL)
+        let vc = SavedScriptsViewController()
+        vc.url = pageURL
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func getSampleScripts() -> [UIAlertAction] {
@@ -123,15 +138,54 @@ class ActionViewController: UIViewController {
         return sampleScriptActions
     }
     
+    @objc func save() {
+        let ac = UIAlertController(title: "Save Script?", message: "Please provide a name to save script", preferredStyle: .alert)
+        
+        ac.addTextField()
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        ac.addAction(cancel)
+        
+        let save = UIAlertAction(title: "Save", style: .default) { [weak self, weak ac] _ in
+            guard let scriptName = ac?.textFields?[0].text else { return }
+            guard !scriptName.isEmpty else {
+                let warn = UIAlertController(title: "Script name cannot be empty", message: nil, preferredStyle: .alert)
+                warn.addAction(UIAlertAction(title: "OK", style: .default))
+                self?.present(warn, animated: true)
+                return
+            }
+            self?.saveScript(withName: scriptName)
+        }
+        ac.addAction(save)
+        
+        present(ac, animated: true)
+    }
+    
+    func saveScript(withName scriptName: String) {
+        var savedScripts = [JSScriptObject]()
+        
+        if let data = UserDefaults.standard.data(forKey: "savedScripts") {
+            let decoder = JSONDecoder()
+            if let decodedData = try? decoder.decode([JSScriptObject].self, from: data) {
+                savedScripts += decodedData
+            }
+        }
+        
+        let toSave = JSScriptObject(title: scriptName, url: pageURL, script: script.text)
+        savedScripts.append(toSave)
+        
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode(savedScripts) {
+            UserDefaults.standard.setValue(jsonData, forKey: "savedScripts")
+        }
+    }
+    
+    
     func loadSampleScripts() {
-        print("Reach 1")
         if let url = Bundle.main.url(forResource: "SampleScripts", withExtension: "json") {
-            print("Reach 2")
             if let data = try? Data(contentsOf: url) {
-                print("Reach 3")
                 let decoder = JSONDecoder()
                 if let decodedData = try? decoder.decode([JSScriptObject].self, from: data) {
-                    print("Reach 4")
                     sampleScripts += decodedData
                 }
             }
