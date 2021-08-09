@@ -19,6 +19,7 @@ class ActionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addDoneButton()
+        addKeyboardObserver()
         getActionInput()
     }
     
@@ -41,6 +42,29 @@ class ActionViewController: UIViewController {
     
     func addDoneButton() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+    }
+    
+    func addKeyboardObserver() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    @objc func adjustForKeyboard(notification: Notification) {
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        let keyboardScreenEndframe = keyboardValue.cgRectValue
+        let keyboardViewEndframe = view.convert(keyboardScreenEndframe, from: view.window)
+        
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            script.contentInset = .zero
+        } else {
+            script.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndframe.height - view.safeAreaInsets.bottom, right: 0) // Compenstation for safe area on devices with notch
+        }
+        
+        script.scrollIndicatorInsets = script.contentInset
+        
+        let selectedRange = script.selectedRange
+        script.scrollRangeToVisible(selectedRange)
     }
 
     @IBAction func done() {
